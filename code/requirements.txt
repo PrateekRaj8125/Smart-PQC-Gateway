@@ -1,0 +1,12 @@
+flask
+scikit-learn
+pandas
+cryptography
+joblib
+gunicorn
+liboqs-python
+numpy
+matplotlib
+seaborn
+requests
+kagglehub

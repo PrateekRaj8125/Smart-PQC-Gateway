@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven PQC Gateway</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ AI-Driven Post-Quantum Cloud Gateway</h1>
+            <p>Empirical Research Testbed: Dynamic AI Cryptography Routing</p>
+        </header>
+
+        <main>
+            <div class="grid" style="margin-bottom: 20px;">
+                <div class="panel">
+                    <h2>1. Data Input</h2>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Tester Username</label>
+                            <input type="text" id="username" name="username" placeholder="e.g., Researcher_01" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Direct Message Payload</label>
+                            <textarea id="textPayload" placeholder="Type or paste a secret message here to see the encryption output..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>OR Upload File (Binary Test)</label>
+                            <input type="file" id="fileInput" name="file">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Encryption Mode</label>
+                            <div class="custom-select-wrapper">
+                                <div class="custom-select" id="customSelectBtn">
+                                    <span id="customSelectText" style="color: #4CAF50;">🤖 Automatic (AI Routing)</span>
+                                    <span class="dropdown-arrow">▼</span>
+                                </div>
+                                <ul class="custom-select-options" id="customSelectOptions">
+                                    <li data-value="Automatic" class="selected">🤖 Automatic (AI Routing)</li>
+                                    <li data-value="AES">🟢 Standard AES (Forced)</li>
+                                    <li data-value="PQC">🔴 Quantum PQC (Forced)</li>
+                                </ul>
+                            </div>
+                            <input type="hidden" id="algoSelect" name="algoSelect" value="Automatic">
+                        </div>
+
+                        <button type="button" id="uploadFileBtn">Encrypt & Transmit</button>
+                        <p id="liveTimerDisplay" class="timer-display">⏱️ Real Round Trip: <span id="actualTime">0.00</span> ms</p>
+                    </form>
+                </div>
+
+                <div class="panel results-panel">
+                    <h2>2. AI Analysis & Ciphertext</h2>
+                    
+                    <div class="metric-box">
+                        <strong>Threat Level:</strong> <span id="outThreat">0</span>/10
+                        <div class="progress-bg"><div id="threatBar" class="progress-fill"></div></div>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <strong>Server Load:</strong> <span id="outLoad">0</span>%
+                        <div class="progress-bg"><div id="loadBar" class="progress-fill"></div></div>
+                    </div>
+
+                    <div class="metric highlight"><strong>Algorithm Selected:</strong> <span id="outAlgo">-</span></div>
+                    <div class="metric reason-box"><strong>AI Reason:</strong> <span id="outReason">Awaiting data...</span></div>
+                    
+                    <h3 style="margin-top:20px; font-size: 1.1em; color: #a9b7c6;">Encrypted Payload Output</h3>
+                    <textarea id="outCipher" readonly placeholder="Awaiting encryption sequence..."></textarea>
+                </div>
+            </div>
+
+            <div class="panel dashboard">
+                <h2>3. 📊 Network Impact Dashboard</h2>
+                <div class="charts-grid">
+                    
+                    <div class="chart-box">
+                        <h4>Algorithm Usage</h4>
+                        <div class="canvas-wrapper">
+                            <canvas id="algoPieChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h4>Packet Drops</h4>
+                        <div class="canvas-wrapper">
+                            <canvas id="packetLossChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-box span-2">
+                        <h4>Latency Overhead</h4>
+                        <div class="canvas-wrapper">
+                            <canvas id="latencyChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
