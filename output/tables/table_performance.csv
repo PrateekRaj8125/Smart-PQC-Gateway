@@ -1,0 +1,3 @@
+Algorithm,Sim_Latency_Mean,Sim_Latency_STD,Real_Latency_Mean,Avg_Packet_Loss,Avg_File_Size
+Hybrid PQC,6013.72,9588.47,3643.68,12.91,3999.15
+Standard AES,5552.87,8606.57,3596.90,5.37,5537.87

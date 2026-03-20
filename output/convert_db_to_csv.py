@@ -1,11 +1,16 @@
 import sqlite3
 import pandas as pd
 
-# Path to your database
-DB_PATH = "code/research_data.db"
+from pathlib import Path
 
-# Output CSV file
-OUTPUT_CSV = "output/research_data.csv"
+# Get current file's directory (output/)
+BASE_DIR = Path(__file__).resolve().parent
+
+# Go to repo root
+ROOT_DIR = BASE_DIR.parent
+
+DB_PATH = ROOT_DIR / "code" / "research_data.db"
+OUTPUT_CSV = BASE_DIR / "research_data.csv"
 
 def convert_db_to_csv():
     try:

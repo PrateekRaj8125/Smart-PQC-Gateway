@@ -30,17 +30,17 @@ summary = df.groupby('algorithm').agg({
 }).reset_index()
 summary.columns = ['Algorithm','Sim_Latency_Mean','Sim_Latency_STD','Real_Latency_Mean','Avg_Packet_Loss','Avg_File_Size']
 summary
-summary.to_latex('tables/table_performance.tex', index=False, float_format='%.2f')
+summary.to_csv('tables/table_performance.csv', index=False, float_format='%.2f')
 
 ## 📊 Table 2: Payload Latency
 payload_table = df.groupby(['data_type','algorithm'])['real_latency_ms'].mean().reset_index()
 payload_table
-payload_table.to_latex('tables/table_payload.tex', index=False, float_format='%.2f')
+payload_table.to_csv('tables/table_payload.csv', index=False, float_format='%.2f')
 
 ## 📊 Table 3: Packet Loss Stats
 packet_table = df.groupby('algorithm')['packets_lost'].describe()[['mean','max','min']]
 packet_table
-packet_table.to_latex('tables/table_packet_loss.tex', float_format='%.2f')
+packet_table.to_csv('tables/table_packet_loss.csv', float_format='%.2f')
 
 
 ## 📈 Graphs (Formatted - Publication Ready)

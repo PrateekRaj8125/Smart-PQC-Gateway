@@ -1,0 +1,10 @@
+data_type,algorithm,real_latency_ms
+Document_PDF,Hybrid PQC,1360.56
+Document_PDF,Standard AES,1388.96
+HD_Video,Hybrid PQC,9613.91
+HD_Video,Standard AES,9362.48
+High_Res_Image,Hybrid PQC,5753.56
+High_Res_Image,Standard AES,5345.12
+Manual_Web_Upload,Hybrid PQC,900.50
+Text_IoT,Hybrid PQC,1211.65
+Text_IoT,Standard AES,1235.13

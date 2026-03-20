@@ -24,8 +24,8 @@ def run_automated_tests():
     payload_profiles = [
         {"type": "Text_IoT",       "size_kb": 1.0,     "iterations": 1000},
         {"type": "Document_PDF",   "size_kb": 50.0,    "iterations": 500},
-        {"type": "High_Res_Image", "size_kb": 2500.0,  "iterations": 500}, 
-        {"type": "HD_Video",       "size_kb": 10000.0, "iterations": 500}       
+        {"type": "High_Res_Image", "size_kb": 2500.0,  "iterations": 500},
+        {"type": "HD_Video",       "size_kb": 10000.0, "iterations": 500}
     ]
     
     total_tests = sum(profile["iterations"] for profile in payload_profiles)
