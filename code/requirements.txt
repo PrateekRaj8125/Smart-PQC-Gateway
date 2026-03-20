@@ -4,7 +4,6 @@ pandas
 cryptography
 joblib
 gunicorn
-liboqs-python
 numpy
 matplotlib
 seaborn
