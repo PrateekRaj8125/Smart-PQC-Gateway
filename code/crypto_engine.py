@@ -4,9 +4,6 @@ from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
-# We completely removed the unstable 'liboqs' C-library dependency 
-# to guarantee zero HTTP 500 crashes on Windows.
-
 STANDARD_KEY = Fernet.generate_key()
 standard_cipher = Fernet(STANDARD_KEY)
 
