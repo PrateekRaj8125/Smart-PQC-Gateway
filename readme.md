@@ -21,6 +21,8 @@ Smart-PQC-Gateway/
 │   ├── templates/index.html   # Web UI
 │   └── static/                # CSS and JavaScript assets
 ├── output/                    # Generated charts/tables/data exports
+├── docs/                      # Stores external files
+├── LICENSE                    # MIT License
 └── readme.md
 ```
 
@@ -220,7 +222,7 @@ By default, the Flask server runs at:
     - choose Automatic, AES, or PQC
     - click **Encrypt & Transmit**
 
-Example:
+Example:  
 ![Encryption Result](docs/assets/result.png)
 
 ### (Optional) Step 4 - Batch experiment check
