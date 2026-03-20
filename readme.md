@@ -8,16 +8,6 @@ It lets you submit a text payload or file, then shows whether the system used **
 
 ---
 
-## 📸 Screenshots
-
-> Add your screenshots below
-
-![Web Interface](images/web-interface.png)  
-![Dashboard](images/dashboard.png)  
-![Encryption Result](images/result.png)
-
----
-
 ## Repository structure
 
 ```text
@@ -170,7 +160,6 @@ Run the following command in the terminal:
     cd ..
     git clone https://github.com/PrateekRaj8125/Smart-PQC-Gateway
     cd Smart-PQC-Gateway/code
-
 ```
 
 ### Step 2 - Install dependencies and start the application
@@ -182,7 +171,6 @@ Run the following command in your terminal if you are using:
 
 ```bash
     ./run_project.bat
-
 ```
 
 **OR**  
@@ -194,7 +182,6 @@ Run the following command in your terminal if you are using:
 
 ```bash
     run_project.bat
-
 ```
 
 **OR**  
@@ -205,7 +192,6 @@ Run the following commands step by step if both of the above commands don't work
     pip install -r requirements.txt
     python train_ai.py
     python app.py
-
 ```
 
 By default, the Flask server runs at:
@@ -214,13 +200,15 @@ By default, the Flask server runs at:
     http://127.0.0.1:5000
 ```
 
+![Dashboard](docs/assets/Dashboard_ScreenShot.jpeg)
+
 ### Step 3 - Open the web interface
 
 1. >**Optional step**
 
     Go to:
 
-    ```bash
+    ```text
         C:\Smart-PQC-Gateway\code
     ```
 
@@ -232,6 +220,9 @@ By default, the Flask server runs at:
     - choose Automatic, AES, or PQC
     - click **Encrypt & Transmit**
 
+Example:
+![Encryption Result](docs/assets/result.png)
+
 ### (Optional) Step 4 - Batch experiment check
 
 **Open a new terminal and run:**
@@ -240,7 +231,6 @@ By default, the Flask server runs at:
     cd ..
     cd ..
     cd Smart-PQC-Gateway/code
-
 ```
 
 1. Download `Clumsy`:
@@ -251,7 +241,7 @@ By default, the Flask server runs at:
 
 2. Open the **Clumsy application** and enter the following filter:
 
-    ```bash
+    ```text
         tcp.ScrPort==5000 or tcp.DstPort==5000
     ```
 
@@ -259,16 +249,15 @@ By default, the Flask server runs at:
     - Lag
     - Drop Rate
 
-3. For repeated trials, run:
+3. For repeated trials, run in the second terminal:
 
     ```bash
         python test_automator.py
-
     ```
 
     In the terminal enter the custom `Lag` and custom `Drop` value you set in `Clumsy` application.
 
-4. For repeated trials of High Resolution Images, run:
+4. For repeated trials of High Resolution Images, run in the second terminal:
 
     ```bash
         python simulate_bulk_photos.py
@@ -295,7 +284,6 @@ After experiments are completed:
         cd output
         python convert_db_to_csv.py
         python generate_output.py
-
     ```
 
 4. **(Optional)** If you want to see your charts and tables in a python notebook:
