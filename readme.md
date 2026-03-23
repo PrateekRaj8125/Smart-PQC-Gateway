@@ -164,6 +164,8 @@ Run the following command in the terminal:
     cd Smart-PQC-Gateway/code
 ```
 
+If you want to train AI in your own system delete the file `C:\Smart-PQC-Gateway\code\research_ai_model.pkl`.
+
 ### Step 2 - Install dependencies and start the application
 
 Run the following command in your terminal if you are using:
