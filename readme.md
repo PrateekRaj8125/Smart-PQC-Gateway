@@ -164,7 +164,7 @@ Run the following command in the terminal:
     cd Smart-PQC-Gateway/code
 ```
 
-If you want to train AI in your own system delete the file `C:\Smart-PQC-Gateway\code\research_ai_model.pkl`.
+If you want to train AI in your own system delete the file: `C:\Smart-PQC-Gateway\code\research_ai_model.pkl`.
 
 ### Step 2 - Install dependencies and start the application
 
@@ -208,15 +208,14 @@ By default, the Flask server runs at:
 
 ### Step 3 - Open the web interface
 
-1. >**Optional step**
-
-    Go to:
-
-    ```text
-        C:\Smart-PQC-Gateway\code
-    ```
-
-    Delete `research_data.db` for a fresh database.
+1. >**Optional step**  
+    >Go to:
+    >
+    >```text
+    >    C:\Smart-PQC-Gateway\code
+    >```
+    >
+    >Delete `research_data.db` for a fresh database.
 
 2. Visit the local server in your browser and:
     - enter a username
