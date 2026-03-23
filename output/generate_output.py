@@ -42,6 +42,28 @@ packet_table = df.groupby('algorithm')['packets_lost'].describe()[['mean','max',
 packet_table
 packet_table.to_csv('tables/table_packet_loss.csv', float_format='%.2f')
 
+## 📊 Table 4: Tail Latency (95th Percentile)
+tail_latency = df.groupby('algorithm')['real_latency_ms'].quantile(0.95).reset_index()
+tail_latency.columns = ['Algorithm', 'Latency_95th_Percentile']
+tail_latency.to_csv('tables/table_tail_latency.csv', index=False, float_format='%.2f')
+
+## 📊 Table 5: Latency Ratio
+mean_latency = df.groupby('algorithm')['real_latency_ms'].mean()
+try:
+    ratio = mean_latency['Hybrid PQC'] / mean_latency['Standard AES']
+except:
+    ratio = None
+ratio_df = pd.DataFrame({
+    'Metric': ['PQC_to_AES_Latency_Ratio'],
+    'Value': [ratio]
+})
+ratio_df.to_csv('tables/table_latency_ratio.csv', index=False)
+
+## 📊 Table 6: Packet Loss Rate
+df['loss_rate'] = df['packets_lost'] / (df['size_kb'] + 1)
+loss_rate = df.groupby('algorithm')['loss_rate'].mean().reset_index()
+loss_rate.columns = ['Algorithm', 'Avg_Loss_Rate']
+loss_rate.to_csv('tables/table_loss_rate.csv', index=False, float_format='%.4f')
 
 ## 📈 Graphs (Formatted - Publication Ready)
 ## Graph 1: Average Latency
@@ -108,3 +130,19 @@ sns.scatterplot(data=df, x='real_latency_ms', y='security_score', hue='algorithm
 plt.title('Security vs Performance Trade-off')
 plt.tight_layout()
 plt.savefig('charts/fig8_security_vs_performance_tradeoff.png', dpi=300)
+
+## Graph 9: Tail Latency Comparison
+plt.figure()
+sns.barplot(data=tail_latency, x='Algorithm', y='Latency_95th_Percentile')
+plt.title('95th Percentile Latency Comparison')
+plt.ylabel('Latency (ms)')
+plt.tight_layout()
+plt.savefig('charts/fig9_tail_latency.png', dpi=300)
+
+## Graph 10: Throughput vs Size
+plt.figure()
+sns.scatterplot(data=df, x='size_kb', y='throughput_kbps', hue='algorithm')
+plt.xscale('log'); plt.yscale('log')
+plt.title('Throughput Scaling vs Payload Size')
+plt.tight_layout()
+plt.savefig('charts/fig10_throughput_scaling.png', dpi=300)
