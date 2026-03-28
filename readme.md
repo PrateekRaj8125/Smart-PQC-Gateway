@@ -154,6 +154,7 @@ In automatic mode, the server simulates benign versus suspicious conditions and 
 
 - Python 3.10 recommended
 - pip
+- Git
 
 ### Step 1 - Clone the GitHub repository
 
