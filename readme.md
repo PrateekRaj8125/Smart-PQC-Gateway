@@ -140,6 +140,14 @@ In automatic mode, the server simulates benign versus suspicious conditions and 
 
 ---
 
+## Project Architecture
+
+**AI-driven dynamic cryptographic routing architecture:**
+
+![Project Architecture](docs/assets/architecture_diagram.png)
+
+---
+
 ## Getting started
 
 ### Prerequisites
