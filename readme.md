@@ -1,5 +1,7 @@
 # Smart-PQC-Gateway
 
+![Smart-PQC-Gateway](docs/assets/Smart-PQC-Gateway.png)
+
 Smart-PQC-Gateway is an **AES vs PQC algorithm usage checker** packaged as a small Flask web app.  
 It lets you submit a text payload or file, then shows whether the system used **Standard AES** or **Hybrid PQC**, why that route was chosen, and what network impact came with that decision.
 
